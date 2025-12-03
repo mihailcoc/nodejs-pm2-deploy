@@ -14,7 +14,7 @@ module.exports = {
     apps: [
       {
         name: "frontend",
-        script: "src/app.js",
+        script: "dist/app.js",
         cwd: path.resolve(__dirname),
         env: {
           NODE_ENV: 'production',
