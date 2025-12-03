@@ -11,6 +11,16 @@ const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_REPOSITORY, DEPLOY_PATH, DEPLOY_REF = '
   process.env;
 
 module.exports = {
+    apps: [
+      {
+        name: "backend",
+        script: "dist/app.js",
+        cwd: path.resolve(__dirname),
+        env: {
+          NODE_ENV: 'production',
+      },
+      },
+    ],
   deploy: {
     production: {
       user: DEPLOY_USER,
