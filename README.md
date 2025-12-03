@@ -22,13 +22,20 @@ ssh  rozamund395@158.160.204.232
 
 nginx
 sudo nano /etc/nginx/sites-available/default
+sudo nano /etc/nginx/sites-available/mike395.nomorepartiessbs.ru            mike395.nomorepartiessbs.ru
+sudo nano /etc/nginx/sites-available/api.mike395.nomorepartiessbs.ru    api.mike395.nomorepartiessbs.ru
 
+# Перезапустить nginx и проверить его работу.
+sudo nginx -t
+
+# Если ошибок не появилось:
+sudo systemctl restart nginx 
 
 cd nodejs-pm2-deploy
 
 npm install dotenv
 
-Запустить проект
+# Запустить проект
 pm2 start app.js
 cd backend
 pm2 start ecosystem.config.js
@@ -39,16 +46,16 @@ scp [путь к файлу] [путь к файлу] [имя пользоват
 scp test.txt user@192.168.1.29:/home/user/
 scp .env rozamund395@158.160.204.232 /nodejs-pm2-deploy/backend/
 
-Дождемся окончания установки, а после добавим программу в автозагрузку:
+# Дождемся окончания установки, а после добавим программу в автозагрузку:
 sudo systemctl enable nginx
 
-Статус nginx
+# Статус nginx
 sudo service nginx status
 
 
 pm2 restart backend
 
-На сервере
+# На сервере
 cd backend
 npm run build
 
@@ -59,3 +66,16 @@ chmod +x /home/nodejs-pm2-deploy/frontend
 chmod +x frontend
 
 
+
+Проблема с запуском.
+я бы советовал заново взять от сюда код заменить две строчки, установить зависимости и запустить
+
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+
+"scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
