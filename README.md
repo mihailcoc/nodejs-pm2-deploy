@@ -210,21 +210,27 @@ git pull git@github.com:mihailcoc/nodejs-pm2-deploy.git
 
 # Скачать по pm2
 npm ci
-
+# pm2 setup
 pm2 deploy production
 pm2 deploy production set up
-
+pm2 deploy ecosystem.config.js production --force
 # Добавить на удаленный сервер последний коммит
 pm2 deploy production revert 0
 
 
 nodejs -v
 npm -v
+node -v
 nvm list
 nvm install 18.17.1
+nvm install 18.17.1
 nvm install 22.17.1
+nvm use 16.20.2
 nvm use 22.17.1
 sudo apt install -y nodejs npm
+npm install -g npm@latest
 
 npm i -g pm2
+npm i git
 
+npm fund
