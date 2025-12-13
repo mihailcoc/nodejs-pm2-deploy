@@ -19,7 +19,7 @@ module.exports = {
       repo: DEPLOY_REPOSITORY,
       path: DEPLOY_PATH,
       "post-deploy":
-        `cd frontend && pwd && npm i && npm ci && npm fund && npm run build`,
+        `pwd && cd source/frontend && pwd && npm i && npm ci && npm fund && npm run build`,
     },
   },
 };

@@ -201,6 +201,8 @@ git commit
 git push https://github.com/mihailcoc/nodejs-pm2-deploy
 git push --force https://github.com/mihailcoc/nodejs-pm2-deploy
 
+ git push --set-upstream https://github.com/mihailcoc/nodejs-pm2-deploy main
+
 git clone https://github.com/mihailcoc/nodejs-pm2-deploy
 git pull https://github.com/mihailcoc/nodejs-pm2-deploy
 
@@ -234,3 +236,5 @@ npm i -g pm2
 npm i git
 
 npm fund
+
+mv nodejs-pm2-deploy source
