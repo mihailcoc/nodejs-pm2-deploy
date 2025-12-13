@@ -200,6 +200,7 @@ git add .
 git commit
 git push https://github.com/mihailcoc/nodejs-pm2-deploy
 git push --force https://github.com/mihailcoc/nodejs-pm2-deploy
+git push  https://github.com/mihailcoc/nodejs-pm2-deploy --force
 
  git push --set-upstream https://github.com/mihailcoc/nodejs-pm2-deploy main
 
@@ -238,3 +239,8 @@ npm i git
 npm fund
 
 mv nodejs-pm2-deploy source
+
+
+cp -r /etc /etc_back
+cp -r /home/rozamund395/mesto-source-deploy/frontend/current/source /home/rozamund395/mesto-source-deploy/frontend/current
+sudo mv /home/rozamund395/mesto-source-deploy/frontend/current/source /home/rozamund395/mesto-source-deploy/frontend/current
